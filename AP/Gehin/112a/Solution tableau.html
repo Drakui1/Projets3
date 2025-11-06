@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="fr">
+	<head>
+			<meta charset="UTF-8">
+			<title>Tables</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head> 
+<body> 
+	<script> 
+	// Déclaration des fonctions 
+	function remplirTableau() {
+		let compteur = 0
+		let nom = ""
+		do {
+				nom = prompt("Saisissez un nom.\nLaisser vide lorsque vous avez fini.")
+				if (nom !="") {
+					monTableau[compteur] = nom
+				} 
+				compteur++ 
+			} while (nom != "") 
+		} 
+		
+		function lireTableau() { 
+			let HTML = "<table border=1>"
+			for (t=0; t<monTableau.length; t++) { 
+				HTML = HTML + "<tr><td>"+monTableau[t]+"</td></tr>"
+			} 
+			HTML = HTML + "</table>" 
+			return HTML
+		} 
+
+		// Exécution du programme 
+		document.write("<H1>Camarades de classe</H1>") 
+		let monTableau = [] 
+		remplirTableau() 
+		let TexteHTML = lireTableau() 
+		document.write(TexteHTML) 
+		
+	</script> 
+</body> 
+</html>

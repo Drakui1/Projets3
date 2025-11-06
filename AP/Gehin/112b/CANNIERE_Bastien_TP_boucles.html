@@ -1,0 +1,60 @@
+<head>
+<title>CANNIERE boucles Javascript</title>
+<meta charset="UTF-8">
+ <link rel="stylesheet" type="text/css" href="CANNIERE_Bastien_style.css"/>
+ </head>
+ <body>
+    <h1>A table !</h1>
+    <table>
+        <tr><td>Cellule 1</td><td>Cellule 2</td></tr>
+        <tr><td>Cellule 3</td><td>Cellule 4</td></tr>
+    </table>
+    <h1>Table en bois de Javascript</h1>
+    <script language="Javascript">
+        //execution du code
+        let nbCellule = window.prompt("combien de cellule voulez vous ?");
+        let tableau='<table>'
+        for (t=0; t < 10; t++) {
+        tableau = tableau + '<tr>' + DessinerCellules(nbCellule) + '</tr>'
+        }
+        function multiplication(ligne) {
+let resultat = ""
+let texte = ""
+for (y=1; y < 11; y++) {
+if (ligne == 0) {
+    // ligne 0 : on affiche le titre
+    resultat = resultat + '<td><strong>'
+    resultat = resultat + "Table de " + y + '</strong></td>'
+    } else {
+        // autres lignes : on affiche le calcul
+        texte = y + " x " + ligne + " = " + ligne*y
+        resultat = resultat + '<td>' + texte + '</td>'
+        }
+    }
+    return resultat
+}
+       // appel de la fonction 
+       tableau = tableau + DessinerCellules(nbCellule)
+        tableau = tableau + "</tr></table>";
+        document.write(tableau);
+        document.write("<h1>Table de multiplication</h1>")
+        tableau='<table>'
+        for (t=0; t < 13; t++) {
+            tableau = tableau + '<tr>' + multiplication(t) + '</tr>'
+        }
+    tableau = tableau + '</table>'
+    document.write(tableau)
+        //déclaration de fonction
+        function DessinerCellules(nombre) {
+            let Resultat=""
+            for (cellule = 0; cellule < nombre; cellule++) {
+            if (cellule % 2) {
+            Resultat = Resultat + "<td>case n°" + cellule + "</td>"
+            } else {
+            Resultat = Resultat+"<td class='couleur'>case n°"+cellule+"</td>"
+            }
+            }
+            return Resultat
+        }
+    </script>
+ </body>
