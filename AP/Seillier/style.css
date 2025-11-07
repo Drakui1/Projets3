@@ -1,0 +1,28 @@
+img{
+    border: 5px solid peru;
+    border-radius:50% 50% 50% 50%;
+    height:200px; 
+    width:200px;
+  
+}
+
+h1{
+    color: peru;
+    text-align: center;
+}
+
+h2{
+    color: peru;
+}
+
+h3{
+    color: peru;
+}
+
+body{
+    background-color: blanchedalmond;
+}
+
+u{
+    color: peru;
+}
